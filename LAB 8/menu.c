@@ -2,22 +2,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 int ch, size, *arr, flag = 0, item;
-void sort(int arr[], int n)
+void sort(int *arr, int n)
 {
     for (int i = 0; i < n; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (arr[i] > arr[j])
+            if (*(arr + i) > *(arr + j))
             {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                int temp = *(arr + i);
+                *(arr + i) = *(arr + j);
+                *(arr + j) = temp;
             }
         }
     }
 }
-void binary_search(int arr[], int n)
+void binary_search(int *arr, int n)
 {
     int lb = 0, ub = size - 1, pos;
     printf("\n\nEnter the item you wanna search: ");
@@ -25,11 +25,11 @@ void binary_search(int arr[], int n)
     while (lb <= ub)
     {
         pos = (lb + ub) / 2;
-        if (arr[pos] > item)
+        if (*(arr + pos) > item)
             ub = pos - 1;
-        if (arr[pos] < item)
+        if (*(arr + pos) < item)
             lb = pos + 1;
-        if (item == arr[pos])
+        if (item == *(arr + pos))
         {
             flag = 1;
             break;
@@ -40,13 +40,13 @@ void binary_search(int arr[], int n)
     else
         printf("\nSearch not Successfull!!");
 }
-void linear_search(int arr[], int n)
+void linear_search(int *arr, int n)
 {
     printf("\nEnter the value you want to search: ");
     scanf("%d", &item);
     for (int i = 0; i < size; i++)
     {
-        if (arr[i] == item)
+        if (*(arr + i) == item)
         {
             flag = 1;
             break;
@@ -84,15 +84,16 @@ int main(void)
             arr = realloc(arr, size * sizeof(int));
             break;
         case 3:
+            printf("\nEnter elements in the array: ");
             for (int i = 0; i < size; i++)
             {
-                scanf("%d", &arr[i]);
+                scanf("%d", (arr + i));
             }
             break;
         case 4:
             for (int i = 0; i < size; i++)
             {
-                printf("%d  ", arr[i]);
+                printf("%d  ", *(arr + i));
             }
             break;
         case 5:
@@ -108,10 +109,10 @@ int main(void)
         case 8:
             exit(0);
         default:
+            printf("\nWrong Choice!!");
             break;
         }
     }
-
     return 0;
 }
 // END OF LINE

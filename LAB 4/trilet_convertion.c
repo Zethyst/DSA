@@ -21,12 +21,13 @@ for (int i = 0; i < m; i++)
 for (int j = 0; j < n; j++)
     if((mat1[i][j]) != 0)
     count++;
+    
 int T1[count][3];
 printf("Triplet form: \n");
 printf("row\tcol\tvalue\n");
 T1[0][0]=m;
 T1[0][1]=n;
-T1[0][2]=count;;
+T1[0][2]=count;
 
 y=1;
 for (int i = 0; i < m; i++)
@@ -39,11 +40,10 @@ for (int j = 0; j < n; j++)
     T1[y][1]=j;
     T1[y][2]=mat1[i][j];
     y++;
-    // break;
     }
 }
 }
-for (int i = 0; i < count; i++){
+for (int i = 0; i < count+1; i++){
 for (int j = 0; j < 3; j++)
 printf("%d\t",T1[i][j]);
 printf("\n");

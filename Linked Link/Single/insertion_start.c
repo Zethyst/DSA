@@ -5,8 +5,6 @@ struct Node
     int data;
     struct Node *Link;
 };
-
-
 int main (void){
 struct Node *Head;
 struct Node *New;
@@ -40,7 +38,6 @@ while(PTR!=NULL){
     printf("%d  ",PTR->data);
     PTR=PTR->Link;
 }
-// insert_start(Head);
     struct Node *LOC;
     LOC=(struct Node*)malloc(sizeof(struct Node));
     if(LOC == NULL)
@@ -51,7 +48,6 @@ while(PTR!=NULL){
     else{
     printf("\nEnter the value of LOC Node to be inserted at start: ");
     scanf("%d",&LOC->data);
-    // LOC->Link=NULL;
     LOC->Link=Head;
     Head=LOC;
 
@@ -62,6 +58,4 @@ while(PTR!=NULL){
 }
 return 0;
 }
-// void insert_start(struct Node *Head){
-//     }
 }

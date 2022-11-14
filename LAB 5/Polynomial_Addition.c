@@ -57,6 +57,7 @@ struct Node *insert(struct Node *head,int co,int ex){
             PTR=PTR->next;
         }
         PTR->next=New;
+
     }
     return(head);
 }
@@ -116,7 +117,7 @@ int main(void)
             Head3=insert(Head3,PTR1->co,PTR1->ex);
             PTR1=PTR1->next;
     }
-    
+    printf("\nThe Addition:\n");
     display(Head3);
     return 0;
 }

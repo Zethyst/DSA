@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main (void){
-int mat[100][100],m,n,r1,r2;
+int m,n,r1,r2;
 printf("Enter the number of rows of the matrix: ");
 scanf("%d",&m);
 printf("Enter the number of columns of the matrix: ");

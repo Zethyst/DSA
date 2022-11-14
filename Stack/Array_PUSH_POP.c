@@ -1,49 +1,72 @@
 #include <stdio.h>
 #include <stdlib.h>
-//  void PUSH(int *STACK[100],int Top,int Maxsize,int value){
-//     if(Top==Maxsize){
-//         printf("STACK OVERFLOW!");
-//         exit(0);
-//     }
-//     Top++;
-//     STACK[Top]=value;
+
+#define MAXSIZE 4
+int Top=-1;
+int stack[MAXSIZE];
+
+ void PUSH(int value){
+    if(Top==MAXSIZE-1){
+        printf("STACK OVERFLOW!");
     
-// }
-int POP(int  stack[100],int Top){
+    }
+    Top++;
+    stack[Top]=value;
+    
+}
+int POP(int Top){
     int Data;
     if(Top==-1){
         printf("STACK UNDERFLOW!");
-        exit(0);
+    
     }
     Data=stack[Top];
     Top--;
-    return Data;
+    return (Data);
 }
 int main (void){
-int STACK[100],Top=-1,Maxsize,value;
-printf("Enter the size of the STACK: ");
-scanf("%d",&Maxsize);
-printf("Enter the elements in the STACK: ");
-Top=0;
-for (int i = Top; i < Maxsize-1; i++)
-{   
-    scanf("%d",&STACK[i]);
-    Top++;
+int STACK[100],Top=-1,value;
+int ch;
+while (1)
+{
+printf("\n----------MENU-----------\n");
+printf("\n1. Check if the Stack is Empty or not");
+printf("\n2. Display the contents of the Stack");
+printf("\n3. Push an element into the Stack");
+printf("\n4. Pop an element from the Stack");
+printf("\n5. Exit");
+printf("\nEnter your choice: ");
+scanf("%d",&ch);
+switch (ch)
+{
+case 1:
+    if(Top==-1){
+        printf("STACK is EMPTY!");
+    }
+    break;
+    case 2:
+for (int i = MAXSIZE-1; i >=0; i--)
+{
+    printf("[ %d ]\n",stack[i]);
 }
-
+    break;
+case 3:
 printf("Enter the value you want to insert into STACK: ");
 scanf("%d",&value);
+PUSH(value);
 
-STACK[Top]=value;
-
-// PUSH(&STACK,Top,Maxsize,value);
-
-for (int i = 0; i < Maxsize; i++)
-{
-    printf("%d  ",STACK[i]);
-}
+break;
+case 4:
 int popped_value;
-popped_value=POP(STACK,Top);
+popped_value=POP(Top);
 printf("\nThe value popped: %d",popped_value);
+break;
+default:
+    printf("\nWrong Choice!");
+    break;
+}
+
+}
+
 return 0;
 }

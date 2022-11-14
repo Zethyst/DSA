@@ -11,14 +11,11 @@ TOP++;
 STACK[TOP]=1;
 TOP++;
 STACK[TOP]=9;
-for (int i = 0; i < 10; i++)
+while (TOP!=-1)
 {
-    printf("%d  ",STACK[i]);
+    printf("%d  ",STACK[TOP]);
     TOP--;
-    if(TOP==-1)
-    exit(0);
 }
-
 
 return 0;
 }

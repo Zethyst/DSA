@@ -42,11 +42,10 @@ jump:
         {
             if (data > ptr->data)
             {
-                printf("R");
+                // printf("R");
                 if (ptr->rc == NULL)
                 {
                     New = (struct TREE *)malloc(sizeof(struct TREE));
-                    ptr->rc = New;
                     ptr->rc = INSERT(New, data);
                     goto jump;
                 }
@@ -54,17 +53,16 @@ jump:
             }
             else if (data < ptr->data)
             {
-                printf("L");
+                // printf("L");
                 if (ptr->lc == NULL)
                 {
                     New = (struct TREE *)malloc(sizeof(struct TREE));
-                    ptr->lc = New;
                     ptr->lc = INSERT(New, data);
                     goto jump;
                 }
                 ptr = ptr->lc;
             }
-            else if (data == value)
+            else if (data == ptr->data)
             {
                 printf("\nWrong Input. Value already exists.\n");
                 goto again;

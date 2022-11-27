@@ -5,6 +5,7 @@ struct Node
     int data;
     struct Node *next;
 };
+
 struct Node *create(struct Node *head)
 {
     struct Node *New, *PTR;

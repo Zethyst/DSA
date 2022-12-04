@@ -70,13 +70,13 @@ struct Tree *DELETE(struct Tree *ptr, int key)
         }
         if (ptr->data == key)
         {
-            if (ptr->rc == NULL)
+            if (ptr->rc == NULL && ptr->lc!=NULL)
             {
                 Temp = ptr->lc;
                 free(ptr);
                 return Temp;
             }
-            if (ptr->lc == NULL)
+            if (ptr->lc == NULL && ptr->rc!=NULL)
             {
                 Temp = ptr->rc;
                 free(ptr);

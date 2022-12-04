@@ -66,13 +66,12 @@ int main(void)
     }
     else
     {
-        PTR2->next = PTR1;
-        // Head = PTR2;
+        // PTR2->next = PTR1;
         PTR1->next = NULL;
 
-        PTR1 = PTR2;
-        PTR2 = PTR3;
-        PTR3 = PTR3->next;
+        // PTR1 = PTR2;
+        // PTR2 = PTR3;
+        // PTR3 = PTR3->next;
 
         while (PTR3 != NULL)
         {
@@ -84,6 +83,7 @@ int main(void)
         PTR2->next=PTR1;
         Head=PTR2;
     }
+    printf("\nReversed Linked List\n");
     traveral(Head);
     return 0;
 }

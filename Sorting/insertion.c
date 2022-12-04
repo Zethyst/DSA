@@ -6,7 +6,7 @@ void insertion(int arr[], int n)
     while (i < n)              // loop till unsorted reaches last element
     {
         key = arr[i];                  // assign key as unsorted array first index
-        j = i - 1;                     // and j as one index below that
+        j = i - 1;                     // as j is one index below i 
         while (j >= 0 && key < arr[j]) // loop until j hits appropriate index for key to insert
         {
             arr[j + 1] = arr[j]; // continuous swapping from right to left
